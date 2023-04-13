@@ -26,11 +26,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.beba.bepa.databinding.ActivityMapsBinding;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -135,7 +133,7 @@ public class NyumbaniFragment extends Fragment {
                             // code to update location to Firestore every 1 minute
                             updateLocationToFirestore();
                         }
-                    }, 0, 60000); // run every 1 minute (60,000 milliseconds)
+                    }, 0, 6000000); // run every 1 minute (60,000 milliseconds)
 
 
 
@@ -213,7 +211,7 @@ public class NyumbaniFragment extends Fragment {
 
     private void fetchUsers() {
         db.collection("users")
-                .whereEqualTo("usertype", "enduser")
+                .whereEqualTo("usertype", "operator")
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
@@ -260,10 +258,17 @@ public class NyumbaniFragment extends Fragment {
             private TextView emailTextView;
             private TextView locationTv;
 
+            private TextView matatuSacco;
+            private TextView regno;
+
             UserViewHolder(@NonNull View itemView) {
                 super(itemView);
-                nameTextView = itemView.findViewById(R.id.nameTextView);
-                emailTextView = itemView.findViewById(R.id.emailTextView);
+                nameTextView = itemView.findViewById(R.id.matName);
+//                emailTextView = itemView.findViewById(R.id.emailTextView);
+
+                matatuSacco = itemView.findViewById(R.id.matsacco);
+                regno = itemView.findViewById(R.id.matregno);
+
                 locationTv = itemView.findViewById(R.id.loctv);
 
 
@@ -277,7 +282,7 @@ public class NyumbaniFragment extends Fragment {
                         String userId = user.getUserId();
 
                         // Show a toast with the userId
-                        Toast.makeText(view.getContext(), "Clicked User Id: " + userId, Toast.LENGTH_SHORT).show();
+                       Toast.makeText(view.getContext(), "Clicked User Id: " + userId, Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(view.getContext(), BookMatatu.class);
                         intent.putExtra("Userid", userId);
@@ -289,7 +294,10 @@ public class NyumbaniFragment extends Fragment {
 
             void bind(User user) {
                 nameTextView.setText(user.getFull_name());
-                emailTextView.setText(user.getEmail());
+                matatuSacco.setText(user.getMatatuName());
+                regno.setText(user.getRegno());
+
+                locationTv = itemView.findViewById(R.id.loctv);
 
 
                 Geocoder geocoder = new Geocoder(getContext(), Locale.getDefault());

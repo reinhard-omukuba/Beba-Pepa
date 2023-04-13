@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "775955905777",
-    "project_id": "bebapepa2-fce43",
-    "storage_bucket": "bebapepa2-fce43.appspot.com"
+    "project_number": "234987941135",
+    "project_id": "sample-3721a",
+    "storage_bucket": "sample-3721a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:775955905777:android:9d8f86c783967182cebd50",
+        "mobilesdk_app_id": "1:234987941135:android:189a07eea70d48523ca27a",
         "android_client_info": {
           "package_name": "com.beba.bepa"
         }
       },
       "oauth_client": [
         {
-          "client_id": "775955905777-d1kka82ns92a4br0a4qmgfspmcc968bk.apps.googleusercontent.com",
+          "client_id": "234987941135-cu08s5r5opqol0d1ngng7kt5s3n6m923.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyChE4zsq7W0DvGnelQbwudeA6jmn_X_fAA"
+          "current_key": "AIzaSyBFK6N6ze9wULIOzu_PhSBB6o7wS6GylHs"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "775955905777-d1kka82ns92a4br0a4qmgfspmcc968bk.apps.googleusercontent.com",
+              "client_id": "234987941135-cu08s5r5opqol0d1ngng7kt5s3n6m923.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

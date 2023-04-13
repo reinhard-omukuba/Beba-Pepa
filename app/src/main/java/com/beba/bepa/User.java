@@ -8,16 +8,20 @@ public class User {
     private Double longitude;
     private Double latitude;
     private String userId;
+    private  String matatuName;
+    private String regno;
 
     public User() {}
 
-    public User(String full_name, String email, String userType, Double longitude, Double latitude, String userId) {
+    public User(String full_name, String email, String userType, Double longitude, Double latitude, String userId, String matatuName, String regno) {
         this.full_name = full_name;
         this.email = email;
         this.userType = userType;
         this.longitude = longitude;
         this.latitude = latitude;
         this.userId = userId;
+        this.matatuName = matatuName;
+        this.regno = regno;
     }
 
     public String getFull_name() {
@@ -66,5 +70,21 @@ public class User {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getMatatuName() {
+        return matatuName;
+    }
+
+    public void setMatatuName(String matatuName) {
+        this.matatuName = matatuName;
+    }
+
+    public String getRegno() {
+        return regno;
+    }
+
+    public void setRegno(String regno) {
+        this.regno = regno;
     }
 }
